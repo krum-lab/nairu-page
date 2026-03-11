@@ -395,5 +395,29 @@ function initVipPassword() {
                 });
             }
         });
+
+        // VIP Video interactions — play on hover, click to fullscreen
+        const vipVideoItems = document.querySelectorAll('.vip-video-item');
+        vipVideoItems.forEach(item => {
+            const video = item.querySelector('video');
+            if (!video) return;
+
+            item.addEventListener('mouseenter', () => {
+                video.play().catch(() => { });
+            });
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+            item.addEventListener('click', () => {
+                if (video.requestFullscreen) {
+                    video.muted = false;
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.muted = false;
+                    video.webkitRequestFullscreen();
+                }
+            });
+        });
     }
 }
