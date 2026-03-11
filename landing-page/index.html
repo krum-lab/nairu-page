@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairu — Sua Geek Favorita 💜</title>
+    <meta name="description"
+        content="Nairu, 28 anos, gamer e otaku. Conteúdo exclusivo, fotos e vídeos. Entre no meu mundo geek 💜">
+    <meta property="og:title" content="Nairu — Sua Geek Favorita 💜">
+    <meta property="og:description" content="Gamer, otaku e irresistível. Conteúdo exclusivo te esperando.">
+    <meta property="og:image" content="assets/images/hero.png">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Particles background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Nairu</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#gallery" class="nav-link">Galeria</a>
+                <a href="#vip" class="nav-link nav-link-vip"><i class="fas fa-lock"></i> VIP</a>
+                <a href="#exclusive" class="nav-link">Exclusivo</a>
+                <a href="#contact" class="nav-link">Links</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Online agora</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Oi, eu sou a</span>
+                    <span class="title-name">Nairu<span class="title-accent">.</span></span>
+                </h1>
+                <p class="hero-subtitle">28 anos · Gamer · Otaku · Irresistível</p>
+                <p class="hero-description">
+                    Sua geek favorita com conteúdos que vão te deixar querendo mais.
+                    Entre no meu universo 💜
+                </p>
+                <div class="hero-cta">
+                    <a href="#exclusive" class="btn btn-primary">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram VIP</span>
+                    </a>
+                    <a href="#gallery" class="btn btn-secondary">
+                        <span>Ver Galeria</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="12">0</span><span class="stat-suffix">K+</span>
+                        <span class="stat-label">Seguidores</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="500">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Fotos Exclusivas</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Satisfação</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image-frame">
+                    <img src="assets/images/hero.png" alt="Nairu" loading="eager">
+                </div>
+                <div class="floating-badge badge-anime">
+                    <i class="fas fa-gamepad"></i> Gamer Girl
+                </div>
+                <div class="floating-badge badge-otaku">
+                    <i class="fas fa-fire"></i> Otaku
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Role para baixo</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Quem sou eu</span>
+                <h2 class="section-title">Prazer, <span class="gradient-text">Nairu</span> 💜</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/images/gallery2.png" alt="Nairu selfie" loading="lazy">
+                    <div class="about-image-decoration"></div>
+                </div>
+                <div class="about-content">
+                    <p class="about-text">
+                        Sou <strong>gamer</strong>, <strong>otaku</strong> e apaixonada por tudo que é nerd.
+                        Meus animes favoritos? Naruto, Attack on Titan e Spy x Family.
+                        Quando não estou jogando ou assistindo anime, estou criando conteúdos
+                        <em>exclusivos</em> que vão te surpreender. 🎮
+                    </p>
+                    <div class="about-tags">
+                        <span class="tag"><i class="fas fa-gamepad"></i> PlayStation</span>
+                        <span class="tag"><i class="fas fa-dragon"></i> Anime</span>
+                        <span class="tag"><i class="fas fa-book-open"></i> Mangá</span>
+                        <span class="tag"><i class="fas fa-headset"></i> Streaming</span>
+                        <span class="tag"><i class="fas fa-mask"></i> Cosplay</span>
+                        <span class="tag"><i class="fas fa-heart"></i> Otaku</span>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-camera"></i></div>
+                            <div>
+                                <h4>Fotos Exclusivas</h4>
+                                <p>Conteúdos que você não encontra em nenhum outro lugar</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                            <div>
+                                <h4>Chat Privado</h4>
+                                <p>Converse comigo diretamente no Telegram</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-gift"></i></div>
+                            <div>
+                                <h4>Conteúdo Semanal</h4>
+                                <p>Novos posts toda semana, nunca fica entediante</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Galeria</span>
+                <h2 class="section-title">Prévia do <span class="gradient-text">Conteúdo</span> ✨</h2>
+                <p class="section-subtitle">Uma pequena amostra do que te espera no VIP</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-item-large" data-category="gaming">
+                    <img src="assets/images/gallery1.png" alt="Nairu gaming" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">🎮 Gaming</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="lifestyle">
+                    <img src="assets/images/gallery2.png" alt="Nairu lifestyle" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">📸 Lifestyle</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="cosplay">
+                    <img src="assets/images/gallery3.png" alt="Nairu cosplay" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">🎭 Geek</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="lifestyle">
+                    <img src="assets/images/gallery4.png" alt="Nairu casual" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">🎮 Setup</span>
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-cta">
+                    <div class="cta-card">
+                        <div class="cta-icon"><i class="fas fa-lock"></i></div>
+                        <h3>+500 Fotos</h3>
+                        <p>Desbloqueie o conteúdo completo</p>
+                        <a href="#exclusive" class="btn btn-primary btn-sm">
+                            <i class="fas fa-unlock"></i> Desbloquear
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Section (Password Protected) -->
+    <section class="vip-section" id="vip">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🔒 Área VIP</span>
+                <h2 class="section-title">Conteúdo <span class="gradient-text">Exclusivo</span> 🔥</h2>
+                <p class="section-subtitle">Disponível apenas para membros VIP e Diamond</p>
+            </div>
+
+            <!-- Locked state (visible by default) -->
+            <div class="vip-locked" id="vip-locked">
+                <div class="vip-preview-grid">
+                    <div class="vip-preview-item">
+                        <img src="assets/images/vip1.png" alt="VIP Content" loading="lazy">
+                        <div class="vip-blur-overlay"></div>
+                        <div class="vip-lock-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                    <div class="vip-preview-item">
+                        <img src="assets/images/vip2.png" alt="VIP Content" loading="lazy">
+                        <div class="vip-blur-overlay"></div>
+                        <div class="vip-lock-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                    <div class="vip-preview-item">
+                        <img src="assets/images/gallery5.png" alt="VIP Content" loading="lazy">
+                        <div class="vip-blur-overlay"></div>
+                        <div class="vip-lock-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                    <div class="vip-preview-item vip-counter-card">
+                        <div class="vip-counter-content">
+                            <i class="fas fa-images"></i>
+                            <h3>+500</h3>
+                            <p>Fotos & Vídeos</p>
+                            <span class="vip-counter-tag">Liberados com a senha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vip-unlock-cta">
+                    <button class="btn btn-primary btn-glow" id="btn-unlock-vip">
+                        <i class="fas fa-key"></i>
+                        <span>Desbloquear com Senha</span>
+                    </button>
+                    <p class="vip-hint">Receba sua senha ao assinar VIP ou Diamond 💜</p>
+                </div>
+            </div>
+
+            <!-- Unlocked state (hidden by default) -->
+            <div class="vip-unlocked hidden" id="vip-unlocked">
+                <div class="vip-success-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>Acesso VIP Liberado</span>
+                </div>
+                <div class="vip-gallery-grid">
+                    <div class="vip-gallery-item">
+                        <img src="assets/images/vip1.png" alt="VIP - Lingerie" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">🖤 Lingerie</span>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="vip-gallery-item">
+                        <img src="assets/images/vip2.png" alt="VIP - Bikini" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">👙 Bikini</span>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="vip-gallery-item">
+                        <img src="assets/images/gallery5.png" alt="VIP - Close-up" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">💜 Close-up</span>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="vip-more-cta">
+                    <a href="https://t.me/" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        <span>Ver Tudo no Telegram VIP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Password Modal -->
+    <div class="password-modal" id="password-modal">
+        <div class="password-modal-backdrop" id="password-modal-backdrop"></div>
+        <div class="password-modal-content">
+            <button class="password-modal-close" id="password-modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="password-modal-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Área VIP Protegida</h3>
+            <p>Digite sua senha de acesso para desbloquear o conteúdo exclusivo</p>
+            <div class="password-input-group">
+                <input type="password" id="vip-password-input" placeholder="Digite sua senha..." autocomplete="off">
+                <button class="password-toggle" id="password-toggle" type="button">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            <div class="password-error hidden" id="password-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>Senha incorreta. Tente novamente.</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="btn-submit-password">
+                <i class="fas fa-unlock"></i>
+                <span>Desbloquear</span>
+            </button>
+            <p class="password-modal-hint">Não tem senha? <a href="#exclusive">Assine um plano</a></p>
+        </div>
+    </div>
+
+    <!-- Exclusive / Pricing Section -->
+    <section class="exclusive" id="exclusive">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Conteúdo Exclusivo</span>
+                <h2 class="section-title">Escolha seu <span class="gradient-text">Plano</span> 🔥</h2>
+                <p class="section-subtitle">Quanto mais perto, melhor fica 💜</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="pricing-emoji">💜</span>
+                        <h3>Free</h3>
+                        <div class="pricing-price">
+                            <span class="price">R$0</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Acesso ao Instagram</li>
+                        <li><i class="fas fa-check"></i> Conteúdo público</li>
+                        <li><i class="fas fa-check"></i> Stories diários</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Chat privado</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Conteúdo exclusivo</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Pedidos personalizados</li>
+                    </ul>
+                    <a href="https://instagram.com" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-instagram"></i> Seguir
+                    </a>
+                </div>
+                <div class="pricing-card pricing-featured">
+                    <div class="pricing-badge">🔥 Mais Popular</div>
+                    <div class="pricing-header">
+                        <span class="pricing-emoji">⚡</span>
+                        <h3>VIP</h3>
+                        <div class="pricing-price">
+                            <span class="price">R$29</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Tudo do Free</li>
+                        <li><i class="fas fa-check"></i> +500 fotos exclusivas</li>
+                        <li><i class="fas fa-check"></i> Vídeos semanais</li>
+                        <li><i class="fas fa-check"></i> Chat privado comigo</li>
+                        <li><i class="fas fa-check"></i> Conteúdo lingerie</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Pedidos personalizados</li>
+                    </ul>
+                    <a href="https://t.me/" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-telegram"></i> Assinar VIP
+                    </a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="pricing-emoji">👑</span>
+                        <h3>Diamond</h3>
+                        <div class="pricing-price">
+                            <span class="price">R$79</span>
+                            <span class="period">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Tudo do VIP</li>
+                        <li><i class="fas fa-check"></i> Pedidos personalizados</li>
+                        <li><i class="fas fa-check"></i> Conteúdo bikini exclusivo</li>
+                        <li><i class="fas fa-check"></i> GIFs e vídeos especiais</li>
+                        <li><i class="fas fa-check"></i> Prioridade nas respostas</li>
+                        <li><i class="fas fa-check"></i> Conteúdo antecipado</li>
+                    </ul>
+                    <a href="https://t.me/" class="btn btn-outline" target="_blank">
+                        <i class="fas fa-crown"></i> Ser Diamond
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section class="links" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Me encontre</span>
+                <h2 class="section-title">Meus <span class="gradient-text">Links</span> 🔗</h2>
+            </div>
+            <div class="links-grid">
+                <a href="https://t.me/" class="link-card link-telegram" target="_blank">
+                    <div class="link-icon"><i class="fab fa-telegram"></i></div>
+                    <div class="link-info">
+                        <h3>Telegram</h3>
+                        <p>Chat privado e conteúdo VIP</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://instagram.com" class="link-card link-instagram" target="_blank">
+                    <div class="link-icon"><i class="fab fa-instagram"></i></div>
+                    <div class="link-info">
+                        <h3>Instagram</h3>
+                        <p>Siga para conteúdo diário</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#" class="link-card link-fansly" target="_blank">
+                    <div class="link-icon"><i class="fas fa-heart"></i></div>
+                    <div class="link-info">
+                        <h3>Fansly</h3>
+                        <p>Conteúdo premium completo</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#" class="link-card link-twitter" target="_blank">
+                    <div class="link-icon"><i class="fab fa-twitter"></i></div>
+                    <div class="link-info">
+                        <h3>Twitter / X</h3>
+                        <p>Notícias e previews</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Nairu</span>
+                </div>
+                <p class="footer-text">Feito com 💜 por Nairu · Todos os direitos reservados</p>
+                <div class="footer-socials">
+                    <a href="https://t.me/" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery image" id="lightbox-img">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
