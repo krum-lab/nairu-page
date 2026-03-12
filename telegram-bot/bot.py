@@ -1,9 +1,10 @@
 """
-🤖 Nairu — Bot de Vendas Telegram
-Bot com personalidade geek/otaku, funil de vendas e chat com Gemini AI.
+🤖 Nairu — Bot de Vendas Telegram V2
+Bot com personalidade geek/otaku, funil de vendas, teasers reais e chat com Gemini AI.
 """
 
 import os
+import random
 import asyncio
 import logging
 from dotenv import load_dotenv
@@ -15,6 +16,7 @@ from aiogram.types import (
     FSInputFile, CallbackQuery
 )
 from aiogram.enums import ParseMode
+from pathlib import Path
 
 import google.generativeai as genai
 
@@ -29,6 +31,15 @@ INSTAGRAM_URL = os.getenv("INSTAGRAM_URL", "https://instagram.com/nairu")
 FANSLY_URL = os.getenv("FANSLY_URL", "#")
 LANDING_PAGE_URL = os.getenv("LANDING_PAGE_URL", "#")
 PIX_KEY = os.getenv("PIX_KEY", "")
+
+# Teaser videos directory
+TEASERS_DIR = Path(__file__).parent.parent / "video-generator" / "output"
+TEASER_VIDEOS = []
+if TEASERS_DIR.exists():
+    TEASER_VIDEOS = [
+        f for f in sorted(TEASERS_DIR.glob("*.mp4"))
+        if any(t in f.stem for t in ["teaser", "reel", "nairu_gaming", "nairu_selfie"])
+    ]
 
 # Logging
 logging.basicConfig(level=logging.INFO)
@@ -213,8 +224,20 @@ O pacote completo! 💎
 
 @router.message(CommandStart())
 async def cmd_start(message: types.Message):
-    """Handler para /start."""
+    """Handler para /start — sends welcome + random teaser video."""
     await message.answer(WELCOME_MSG, reply_markup=main_menu_keyboard())
+
+    # Send a random teaser video to hook new users
+    if TEASER_VIDEOS:
+        teaser = random.choice(TEASER_VIDEOS)
+        try:
+            video = FSInputFile(str(teaser))
+            await message.answer_video(
+                video,
+                caption="📸 Um gostinho do que te espera no VIP... 😏💜",
+            )
+        except Exception as e:
+            logger.warning(f"Could not send teaser: {e}")
 
 @router.message(Command("menu"))
 async def cmd_menu(message: types.Message):
@@ -226,14 +249,52 @@ async def cmd_plans(message: types.Message):
     """Handler para /planos."""
     await message.answer("💜 <b>Escolha seu Plano</b>\n\nQual combina mais com você? 😏", reply_markup=plans_keyboard())
 
+@router.message(Command("teaser"))
+async def cmd_teaser(message: types.Message):
+    """Handler para /teaser — sends random teaser video."""
+    if not TEASER_VIDEOS:
+        await message.answer("Em breve novos teasers! 💜", reply_markup=main_menu_keyboard())
+        return
+
+    teaser = random.choice(TEASER_VIDEOS)
+    try:
+        video = FSInputFile(str(teaser))
+        await message.answer_video(
+            video,
+            caption=(
+                "🔥 <b>Prévia Exclusiva</b>\n\n"
+                "Isso é só o começo... 😏\n"
+                "No VIP tem muito mais! 💜\n\n"
+                "Use /planos pra desbloquear tudo!"
+            ),
+            reply_markup=plans_keyboard(),
+        )
+    except Exception as e:
+        logger.error(f"Teaser send error: {e}")
+        await message.answer("Ops, tenta de novo! 💜", reply_markup=main_menu_keyboard())
+
 # ============================================================
 # CALLBACK HANDLERS
 # ============================================================
 
 @router.callback_query(F.data == "preview")
 async def cb_preview(callback: CallbackQuery):
+    """Send a real teaser video when user clicks preview."""
     await callback.message.edit_text(PREVIEW_MSG, reply_markup=plans_keyboard())
     await callback.answer()
+
+    # Also send actual video teaser
+    if TEASER_VIDEOS:
+        teaser = random.choice(TEASER_VIDEOS)
+        try:
+            video = FSInputFile(str(teaser))
+            await callback.message.answer_video(
+                video,
+                caption="👆 Gostou? No VIP tem muito mais... 😏💜",
+                reply_markup=plans_keyboard(),
+            )
+        except Exception as e:
+            logger.warning(f"Preview teaser error: {e}")
 
 @router.callback_query(F.data == "plans")
 async def cb_plans(callback: CallbackQuery):
